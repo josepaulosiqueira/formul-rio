@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Elis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+     
+    <h1 id="cabecalho">Follow-up de Ordem de Compras <p id="oc"></p><p id="fornecedor"></p><p id="dat"></p></h1>
+ 
+    <form id="formulario" event.preventDefault(); processForm();formatarMoeda();enviarEmail()>
+        <div class="container">
+            <label>Data<input type="date" placeholder="Data" id="data" class="obrigatorio" name="data"/>
+                <span class="error-message"></span>
+            </label>
+            <label>Numero da Oc<input type="number" placeholder="Numero da Oc" id="OC" class="obrigatorio" name="oc"/>
+                <span class="error-message"></span>
+            </label>
+            <label>Centro De Custo<input type="number" placeholder="Centro de custo" name="CC" id="cc"> 
+            </label>
+        </div>
+        <div class="container1">
+            <label>Produto<input type="number" placeholder="Produto" name="prod" id="prod"> 
+            </label>
+            <label>Valor : R$<input type="text" maxlength="9" id="valor">
+            </label>
+            
+            <label>Fornecedor<input type="text" placeholder="Fornecedor" id="forn" name="forn"> 
+            </label>
+        </div>
+        <div class="container2">
+            <label>Local de Uso<input type="number" placeholder="Local de uso" name="LU" id="lu"> 
+            </label>
+            <label>Situação<select name="sit" id="sit">
+            <option id="liq"  value="liquidado">Liquidado</option>
+            <option id="abe"  value="aberto">Aberto Total</option>
+            <option id="fec" value="fechado">Não Fechado</option>
+            </select></label>
+            <label>Nota fiscal<input type="number" placeholder="Nota fiscal" name="NF" id="nf">
+            </label>
+        </div>
+       
+        </label>   
+        <div>Print: <button type="submit" id="PDF">PDF</button></div>
+        <div class="error-message"></div>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
